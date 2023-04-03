@@ -1,10 +1,10 @@
-package com.s8.stack.arch.silicon;
+package com.s8.arch.silicon;
 
+import com.s8.arch.silicon.async.AsyncUnitConfig;
+import com.s8.arch.silicon.clock.ClockUnitConfig;
+import com.s8.arch.silicon.watch.WatchUnitConfig;
 import com.s8.io.xml.annotations.XML_SetElement;
 import com.s8.io.xml.annotations.XML_Type;
-import com.s8.stack.arch.silicon.async.AsyncUnitConfig;
-import com.s8.stack.arch.silicon.clock.ClockUnitConfig;
-import com.s8.stack.arch.silicon.watch.WatchUnitConfig;
 
 @XML_Type(name = "SiliconAppConfiguration", root = true)
 public class SiliconConfiguration {

@@ -1,4 +1,4 @@
-package com.s8.stack.arch.silicon;
+package com.s8.arch.silicon;
 
 
 /**

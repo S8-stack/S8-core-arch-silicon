@@ -1,4 +1,4 @@
-package com.s8.stack.arch.silicon.watch;
+package com.s8.arch.silicon.watch;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 

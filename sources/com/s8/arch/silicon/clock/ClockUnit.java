@@ -1,9 +1,9 @@
-package com.s8.stack.arch.silicon.clock;
+package com.s8.arch.silicon.clock;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import com.s8.stack.arch.silicon.SiliconEngine;
+import com.s8.arch.silicon.SiliconEngine;
 
 /**
  * 

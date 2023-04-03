@@ -1,4 +1,4 @@
-package com.s8.stack.arch.silicon.async;
+package com.s8.arch.silicon.async;
 
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.IntUnaryOperator;

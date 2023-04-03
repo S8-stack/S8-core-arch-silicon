@@ -1,8 +1,8 @@
-package com.s8.stack.arch.silicon.clock;
+package com.s8.arch.silicon.clock;
 
+import com.s8.arch.silicon.SiliconEngine;
 import com.s8.io.xml.annotations.XML_SetAttribute;
 import com.s8.io.xml.annotations.XML_Type;
-import com.s8.stack.arch.silicon.SiliconEngine;
 
 
 @XML_Type(name = "T3UnitConfig")	
