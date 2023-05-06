@@ -29,8 +29,8 @@ public class WatchUnitConfig {
 		super();
 	}
 
-	public WatchUnit build() {
-		return new WatchUnit(nThreads, isVerbose);
+	public WatchSiUnit build() {
+		return new WatchSiUnit(nThreads, isVerbose);
 	}
 
 

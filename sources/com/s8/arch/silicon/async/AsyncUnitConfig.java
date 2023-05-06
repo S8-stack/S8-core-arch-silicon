@@ -50,7 +50,7 @@ public class AsyncUnitConfig {
 	}
 	
 
-	public AsyncUnit build() {
+	public AsyncSiUnit build() {
 		ProfileMapping[] rules = new ProfileMapping[MthProfile.CODE_RANGE];
 
 		// appy rules if any
@@ -68,7 +68,7 @@ public class AsyncUnitConfig {
 			}
 		}
 
-		return new AsyncUnit(nThreads, queueCapacity, rules);
+		return new AsyncSiUnit(nThreads, queueCapacity, rules);
 	}
 
 

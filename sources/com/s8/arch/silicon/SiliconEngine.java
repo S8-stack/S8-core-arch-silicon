@@ -1,11 +1,11 @@
 package com.s8.arch.silicon;
 
 import com.s8.arch.silicon.async.AsyncTask;
-import com.s8.arch.silicon.async.AsyncUnit;
+import com.s8.arch.silicon.async.AsyncSiUnit;
 import com.s8.arch.silicon.clock.ClockTask;
-import com.s8.arch.silicon.clock.ClockUnit;
+import com.s8.arch.silicon.clock.ClockSiUnit;
 import com.s8.arch.silicon.watch.WatchTask;
-import com.s8.arch.silicon.watch.WatchUnit;
+import com.s8.arch.silicon.watch.WatchSiUnit;
 
 /**
  * 
@@ -15,18 +15,18 @@ import com.s8.arch.silicon.watch.WatchUnit;
 public class SiliconEngine {
 
 
-	final AsyncUnit t1Unit;
+	final AsyncSiUnit asyncUnit;
 
 	/**
 	 * 
 	 */
-	final WatchUnit t2Unit;
+	final WatchSiUnit watchUnit;
 
 	
 	/**
 	 * 
 	 */
-	final ClockUnit t3Unit;
+	final ClockSiUnit clockUnit;
 
 
 	/**
@@ -39,9 +39,9 @@ public class SiliconEngine {
 		super();
 		
 		// initialize
-		t1Unit = c.t1UnitConfig.build();
-		t2Unit = c.t2UnitConfig.build();
-		t3Unit = c.t3UnitConfig.build(this);
+		asyncUnit = c.t1UnitConfig.build();
+		watchUnit = c.t2UnitConfig.build();
+		clockUnit = c.t3UnitConfig.build(this);
 	}
 
 
@@ -52,27 +52,27 @@ public class SiliconEngine {
 	public void start() {
 
 		/* <start-processing-units> */
-		t1Unit.start();
-		t2Unit.start();
-		t3Unit.start();
+		asyncUnit.start();
+		watchUnit.start();
+		clockUnit.start();
 		/* </start-processing-units> */
 	}
 
 
 	
 	
-	public void pushT1Task(AsyncTask task) {
-		t1Unit.pushTask(task);
+	public void pushAsyncTask(AsyncTask task) {
+		asyncUnit.pushTask(task);
 	}
 	
 	
-	public void pushT2Task(WatchTask task) {
-		t2Unit.pushTask(task);
+	public void pushWatchTask(WatchTask task) {
+		watchUnit.pushTask(task);
 	}
 	
 
-	public void pushT3Task(ClockTask task) {
-		t3Unit.pushTask(task);
+	public void pushClockTask(ClockTask task) {
+		clockUnit.pushTask(task);
 	}
 	
 	
@@ -84,8 +84,8 @@ public class SiliconEngine {
 
 		
 		/* <stop-processing-units> */
-		t1Unit.stop();
-		t2Unit.stop();
+		asyncUnit.stop();
+		watchUnit.stop();
 		/* </stop-processing-units> */
 	}
 

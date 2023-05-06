@@ -1,6 +1,6 @@
 package com.s8.arch.silicon.async;
 
-public class AsyncUnit {
+public class AsyncSiUnit {
 
 
 	private final int nThreads;
@@ -20,7 +20,7 @@ public class AsyncUnit {
 	 * @param nThreads
 	 * @param capacity
 	 */
-	public AsyncUnit(int nThreads, int capacity, ProfileMapping[] rules) {
+	public AsyncSiUnit(int nThreads, int capacity, ProfileMapping[] rules) {
 		super();
 		this.nThreads = nThreads;
 		workers = new AsyncWorker[nThreads];

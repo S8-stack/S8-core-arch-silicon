@@ -10,7 +10,7 @@ import com.s8.arch.silicon.SiliconEngine;
  * @author pierreconvert
  *
  */
-public class ClockUnit {
+public class ClockSiUnit {
 
 	private final SiliconEngine engine;
 	
@@ -20,7 +20,7 @@ public class ClockUnit {
 	
 	private final long tick;
 	
-	public ClockUnit(SiliconEngine engine, long tick) {
+	public ClockSiUnit(SiliconEngine engine, long tick) {
 		this.engine = engine;
 		isRunning = new AtomicBoolean();
 		incoming = new ConcurrentLinkedQueue<>();

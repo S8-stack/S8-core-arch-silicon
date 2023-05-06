@@ -19,8 +19,8 @@ public class ClockUnitConfig {
 		super();
 	}
 
-	public ClockUnit build(SiliconEngine engine) {
-		return new ClockUnit(engine, tick);
+	public ClockSiUnit build(SiliconEngine engine) {
+		return new ClockSiUnit(engine, tick);
 	}
 
 

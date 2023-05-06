@@ -5,7 +5,7 @@ package com.s8.arch.silicon.watch;
  * @author pierreconvert
  *
  */
-public class WatchUnit {
+public class WatchSiUnit {
 
 	public static final int DEFAULT_CAPACITY = 8;
 
@@ -18,7 +18,7 @@ public class WatchUnit {
 	private final WatchWorker[] workers;
 
 
-	public WatchUnit(int nThreads, boolean isVerbose) {
+	public WatchSiUnit(int nThreads, boolean isVerbose) {
 		super();
 		this.nThreads = nThreads;
 		this.isVerbose = isVerbose;
