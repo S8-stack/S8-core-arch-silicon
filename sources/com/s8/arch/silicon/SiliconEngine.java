@@ -1,6 +1,6 @@
 package com.s8.arch.silicon;
 
-import com.s8.arch.silicon.async.AsyncTask;
+import com.s8.arch.silicon.async.SiAsyncTask;
 import com.s8.arch.silicon.async.AsyncSiUnit;
 import com.s8.arch.silicon.clock.ClockTask;
 import com.s8.arch.silicon.clock.ClockSiUnit;
@@ -61,7 +61,7 @@ public class SiliconEngine {
 
 	
 	
-	public void pushAsyncTask(AsyncTask task) {
+	public void pushAsyncTask(SiAsyncTask task) {
 		asyncUnit.pushTask(task);
 	}
 	

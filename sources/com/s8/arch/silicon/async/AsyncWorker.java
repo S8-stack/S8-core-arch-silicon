@@ -14,7 +14,7 @@ public class AsyncWorker {
 	public final static int DEFAULT_CAPACITY = 1048576;
 	
 	
-	private final static AsyncTask ZERO = new AsyncTask() {
+	private final static SiAsyncTask ZERO = new SiAsyncTask() {
 		
 		@Override
 		public void run() {
@@ -36,7 +36,7 @@ public class AsyncWorker {
 	private final int slot;
 	
 
-	private final BlockingQueue<AsyncTask> tasks;
+	private final BlockingQueue<SiAsyncTask> tasks;
 
 	
 	/**
@@ -82,7 +82,7 @@ public class AsyncWorker {
 
 		public void run() {
 
-			AsyncTask task;
+			SiAsyncTask task;
 			
 			while(isRunning) {
 
@@ -125,7 +125,7 @@ public class AsyncWorker {
 	 * 
 	 * @param runnable
 	 */
-	public boolean pushTask(AsyncTask runnable) {
+	public boolean pushTask(SiAsyncTask runnable) {
 		
 		/**
 		 * When using queues that may impose insertion restrictions (for example

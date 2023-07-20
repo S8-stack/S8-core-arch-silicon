@@ -57,7 +57,7 @@ public class AsyncSiUnit {
 	 * 
 	 * @param task
 	 */
-	public void pushTask(AsyncTask task) {
+	public void pushTask(SiAsyncTask task) {
 		if(task!=null) {
 			MthProfile profile = task.profile();
 			int slot = mappings[profile.code].getSlot();
