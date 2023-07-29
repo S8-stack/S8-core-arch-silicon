@@ -5,7 +5,7 @@ package com.s8.arch.silicon.watch;
  * @author pierreconvert
  *
  */
-public class WatchSiUnit {
+public class WatchSiModule {
 
 	public static final int DEFAULT_CAPACITY = 8;
 
@@ -15,17 +15,17 @@ public class WatchSiUnit {
 	private final int nThreads;
 
 
-	private final WatchWorker[] workers;
+	private final WatchSiWorker[] workers;
 
 
-	public WatchSiUnit(int nThreads, boolean isVerbose) {
+	public WatchSiModule(int nThreads, boolean isVerbose) {
 		super();
 		this.nThreads = nThreads;
 		this.isVerbose = isVerbose;
 
-		workers = new WatchWorker[nThreads];
+		workers = new WatchSiWorker[nThreads];
 		for(int i=0; i<nThreads; i++) {
-			workers[i] = new WatchWorker(i, isVerbose);
+			workers[i] = new WatchSiWorker(i, isVerbose);
 		}
 	}
 
@@ -38,8 +38,7 @@ public class WatchSiUnit {
 
 
 
-	public void pushTask(WatchTask task) {
-
+	public boolean pushTask(WatchSiTask task) {
 		if(task!=null) {
 			if(isVerbose) {
 				System.out.println("\t Start looking for workers, for task="+task.describe());
@@ -51,9 +50,10 @@ public class WatchSiUnit {
 				isAccepted = workers[i++].submit(task);
 			}
 
-			if(!isAccepted) {
-				throw new RuntimeException("failed to submit task");	
-			}
+			return isAccepted;
+		}
+		else {
+			return true;
 		}
 	}
 

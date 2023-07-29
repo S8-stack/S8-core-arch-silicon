@@ -1,6 +1,6 @@
 package com.s8.arch.silicon.async;
 
-public class AsyncSiUnit {
+public class AsyncSiModule {
 
 
 	private final int nThreads;
@@ -8,7 +8,7 @@ public class AsyncSiUnit {
 	/**
 	 * 
 	 */
-	private final AsyncWorker[] workers;
+	private final AsyncSiWorker[] workers;
 
 	private final ProfileMapping[] mappings;
 
@@ -20,13 +20,13 @@ public class AsyncSiUnit {
 	 * @param nThreads
 	 * @param capacity
 	 */
-	public AsyncSiUnit(int nThreads, int capacity, ProfileMapping[] rules) {
+	public AsyncSiModule(int nThreads, int capacity, ProfileMapping[] rules) {
 		super();
 		this.nThreads = nThreads;
-		workers = new AsyncWorker[nThreads];
+		workers = new AsyncSiWorker[nThreads];
 
 		for(int slot = 0; slot<nThreads; slot++) {
-			workers[slot] = new AsyncWorker(slot, capacity);
+			workers[slot] = new AsyncSiWorker(slot, capacity);
 		}
 		
 		// set rules
@@ -57,14 +57,14 @@ public class AsyncSiUnit {
 	 * 
 	 * @param task
 	 */
-	public void pushTask(SiAsyncTask task) {
+	public boolean pushTask(AsyncSiTask task) {
 		if(task!=null) {
 			MthProfile profile = task.profile();
 			int slot = mappings[profile.code].getSlot();
-			boolean isTaskAccepted = workers[slot].pushTask(task);	
-			if(!isTaskAccepted) {
-				throw new RuntimeException("failed to submit task");
-			}	
+			return workers[slot].pushTask(task);
+		}
+		else {
+			return true;
 		}
 	}
 

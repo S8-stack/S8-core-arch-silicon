@@ -1,11 +1,11 @@
 package com.s8.arch.silicon;
 
-import com.s8.arch.silicon.async.SiAsyncTask;
-import com.s8.arch.silicon.async.AsyncSiUnit;
-import com.s8.arch.silicon.clock.ClockTask;
-import com.s8.arch.silicon.clock.ClockSiUnit;
-import com.s8.arch.silicon.watch.WatchTask;
-import com.s8.arch.silicon.watch.WatchSiUnit;
+import com.s8.arch.silicon.async.AsyncSiTask;
+import com.s8.arch.silicon.async.AsyncSiModule;
+import com.s8.arch.silicon.clock.ClockSiTask;
+import com.s8.arch.silicon.clock.ClockSiModule;
+import com.s8.arch.silicon.watch.WatchSiTask;
+import com.s8.arch.silicon.watch.WatchSiModule;
 
 /**
  * 
@@ -15,18 +15,18 @@ import com.s8.arch.silicon.watch.WatchSiUnit;
 public class SiliconEngine {
 
 
-	final AsyncSiUnit asyncUnit;
+	final AsyncSiModule asyncUnit;
 
 	/**
 	 * 
 	 */
-	final WatchSiUnit watchUnit;
+	final WatchSiModule watchUnit;
 
 	
 	/**
 	 * 
 	 */
-	final ClockSiUnit clockUnit;
+	final ClockSiModule clockUnit;
 
 
 	/**
@@ -61,18 +61,30 @@ public class SiliconEngine {
 
 	
 	
-	public void pushAsyncTask(SiAsyncTask task) {
-		asyncUnit.pushTask(task);
+	/**
+	 * @param task
+	 * @return true if task has successfully been submitted
+	 */
+	public boolean pushAsyncTask(AsyncSiTask task) {
+		return asyncUnit.pushTask(task);
 	}
 	
 	
-	public void pushWatchTask(WatchTask task) {
-		watchUnit.pushTask(task);
+	/**
+	 * @param task
+	 * @return true if task has successfully been submitted
+	 */
+	public boolean pushWatchTask(WatchSiTask task) {
+		return watchUnit.pushTask(task);
 	}
 	
 
-	public void pushClockTask(ClockTask task) {
-		clockUnit.pushTask(task);
+	/**
+	 * @param task
+	 * @return true if task has successfully been submitted
+	 */
+	public boolean pushClockTask(ClockSiTask task) {
+		return clockUnit.pushTask(task);
 	}
 	
 	

@@ -5,7 +5,7 @@ import com.s8.io.xml.annotations.XML_Type;
 
 
 @XML_Type(name = "T2UnitConfig")	
-public class WatchUnitConfig {
+public class WatchSiModuleConfig {
 
 	/**
 	 * 
@@ -25,12 +25,12 @@ public class WatchUnitConfig {
 		this.isVerbose = isVerbose;
 	}
 
-	public WatchUnitConfig() {
+	public WatchSiModuleConfig() {
 		super();
 	}
 
-	public WatchSiUnit build() {
-		return new WatchSiUnit(nThreads, isVerbose);
+	public WatchSiModule build() {
+		return new WatchSiModule(nThreads, isVerbose);
 	}
 
 
@@ -38,8 +38,8 @@ public class WatchUnitConfig {
 	 * 
 	 * @return
 	 */
-	public static WatchUnitConfig createDefault() {
-		WatchUnitConfig config = new WatchUnitConfig();
+	public static WatchSiModuleConfig createDefault() {
+		WatchSiModuleConfig config = new WatchSiModuleConfig();
 		config.nThreads = 64;
 		return config;
 	}

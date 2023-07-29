@@ -9,7 +9,7 @@ import com.s8.io.xml.annotations.XML_Type;
 
 
 @XML_Type(name = "T1UnitConfig")	
-public class AsyncUnitConfig {
+public class AsyncSiModuleConfig {
 
 	/**
 	 * 
@@ -17,7 +17,7 @@ public class AsyncUnitConfig {
 	public int nThreads = 4;
 
 	
-	public int queueCapacity = AsyncWorker.DEFAULT_CAPACITY;
+	public int queueCapacity = AsyncSiWorker.DEFAULT_CAPACITY;
 	
 	/**
 	 * 
@@ -45,12 +45,12 @@ public class AsyncUnitConfig {
 
 
 
-	public AsyncUnitConfig() {
+	public AsyncSiModuleConfig() {
 		super();
 	}
 	
 
-	public AsyncSiUnit build() {
+	public AsyncSiModule build() {
 		ProfileMapping[] rules = new ProfileMapping[MthProfile.CODE_RANGE];
 
 		// appy rules if any
@@ -68,7 +68,7 @@ public class AsyncUnitConfig {
 			}
 		}
 
-		return new AsyncSiUnit(nThreads, queueCapacity, rules);
+		return new AsyncSiModule(nThreads, queueCapacity, rules);
 	}
 
 
@@ -76,8 +76,8 @@ public class AsyncUnitConfig {
 	 * 
 	 * @return
 	 */
-	public static AsyncUnitConfig createDefault() {
-		AsyncUnitConfig mapBuilder = new AsyncUnitConfig();
+	public static AsyncSiModuleConfig createDefault() {
+		AsyncSiModuleConfig mapBuilder = new AsyncSiModuleConfig();
 		mapBuilder.nThreads = 4;
 		return mapBuilder;
 	}

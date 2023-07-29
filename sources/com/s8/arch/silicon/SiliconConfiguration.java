@@ -1,33 +1,33 @@
 package com.s8.arch.silicon;
 
-import com.s8.arch.silicon.async.AsyncUnitConfig;
-import com.s8.arch.silicon.clock.ClockUnitConfig;
-import com.s8.arch.silicon.watch.WatchUnitConfig;
+import com.s8.arch.silicon.async.AsyncSiModuleConfig;
+import com.s8.arch.silicon.clock.ClockSiModuleConfig;
+import com.s8.arch.silicon.watch.WatchSiModuleConfig;
 import com.s8.io.xml.annotations.XML_SetElement;
 import com.s8.io.xml.annotations.XML_Type;
 
 @XML_Type(name = "SiliconAppConfiguration", root = true)
 public class SiliconConfiguration {
 
-	public AsyncUnitConfig t1UnitConfig = AsyncUnitConfig.createDefault();
+	public AsyncSiModuleConfig t1UnitConfig = AsyncSiModuleConfig.createDefault();
 	
-	public WatchUnitConfig t2UnitConfig = WatchUnitConfig.createDefault();
+	public WatchSiModuleConfig t2UnitConfig = WatchSiModuleConfig.createDefault();
 	
-	public ClockUnitConfig t3UnitConfig = ClockUnitConfig.createDefault();
+	public ClockSiModuleConfig t3UnitConfig = ClockSiModuleConfig.createDefault();
 	
 	
 	@XML_SetElement(tag = "T1-unit")
-	public void setT1UnitConfig(AsyncUnitConfig config) {
+	public void setT1UnitConfig(AsyncSiModuleConfig config) {
 		this.t1UnitConfig = config;
 	}
 	
 	@XML_SetElement(tag = "T2-unit")
-	public void setT2UnitConfig(WatchUnitConfig config) {
+	public void setT2UnitConfig(WatchSiModuleConfig config) {
 		this.t2UnitConfig = config;
 	}
 	
 	@XML_SetElement(tag = "T3-unit")
-	public void setT3UnitConfig(ClockUnitConfig config) {
+	public void setT3UnitConfig(ClockSiModuleConfig config) {
 		this.t3UnitConfig = config;
 	}
 	

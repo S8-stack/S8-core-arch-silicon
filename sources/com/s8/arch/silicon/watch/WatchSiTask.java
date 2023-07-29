@@ -5,7 +5,7 @@ package com.s8.arch.silicon.watch;
  * @author pierreconvert
  *
  */
-public interface WatchTask {
+public interface WatchSiTask {
 	
 
 	
@@ -19,6 +19,6 @@ public interface WatchTask {
 	/**
 	 * 
 	 */
-	public WatchTask run();
+	public WatchSiTask run();
 	
 }

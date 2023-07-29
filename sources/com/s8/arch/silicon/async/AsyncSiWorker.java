@@ -9,12 +9,12 @@ import java.util.concurrent.BlockingQueue;
  * @author pierreconvert
  *
  */
-public class AsyncWorker {
+public class AsyncSiWorker {
 
 	public final static int DEFAULT_CAPACITY = 1048576;
 	
 	
-	private final static SiAsyncTask ZERO = new SiAsyncTask() {
+	private final static AsyncSiTask ZERO = new AsyncSiTask() {
 		
 		@Override
 		public void run() {
@@ -36,7 +36,7 @@ public class AsyncWorker {
 	private final int slot;
 	
 
-	private final BlockingQueue<SiAsyncTask> tasks;
+	private final BlockingQueue<AsyncSiTask> tasks;
 
 	
 	/**
@@ -45,13 +45,13 @@ public class AsyncWorker {
 	 */
 	private volatile boolean isRunning;
 
-	public AsyncWorker(int slot) {
+	public AsyncSiWorker(int slot) {
 		super();
 		this.slot = slot;
 		this.tasks = new ArrayBlockingQueue<>(DEFAULT_CAPACITY);
 	}
 	
-	public AsyncWorker(int slot, int capacity) {
+	public AsyncSiWorker(int slot, int capacity) {
 		super();
 		this.slot = slot;
 		this.tasks = new ArrayBlockingQueue<>(capacity);
@@ -82,7 +82,7 @@ public class AsyncWorker {
 
 		public void run() {
 
-			SiAsyncTask task;
+			AsyncSiTask task;
 			
 			while(isRunning) {
 
@@ -125,7 +125,7 @@ public class AsyncWorker {
 	 * 
 	 * @param runnable
 	 */
-	public boolean pushTask(SiAsyncTask runnable) {
+	public boolean pushTask(AsyncSiTask runnable) {
 		
 		/**
 		 * When using queues that may impose insertion restrictions (for example

@@ -6,7 +6,7 @@ package com.s8.arch.silicon.async;
  * @author pierreconvert
  *
  */
-public interface SiAsyncTask {
+public interface AsyncSiTask {
 	
 
 	

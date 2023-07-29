@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
  * @author pierreconvert
  *
  */
-public class WatchWorker {
+public class WatchSiWorker {
 	
 	public final int id;
 	
@@ -21,9 +21,9 @@ public class WatchWorker {
 
 	private volatile Process process;
 
-	WatchTask task;
+	WatchSiTask task;
 
-	public WatchWorker(int id, boolean isVerbose) {
+	public WatchSiWorker(int id, boolean isVerbose) {
 		this.id = id;
 		this.isVerbose = isVerbose;
 		isRunning = new AtomicBoolean(false);
@@ -93,7 +93,7 @@ public class WatchWorker {
 	 * @param task
 	 * @return
 	 */
-	public boolean submit(WatchTask task) {
+	public boolean submit(WatchSiTask task) {
 
 		if(isProcessing.compareAndSet(false, true)) {
 
@@ -136,8 +136,8 @@ public class WatchWorker {
 	public void stop() {
 		if(isRunning.compareAndSet(true, false)) {
 			
-			submit(new WatchTask() {
-				public @Override WatchTask run() { return null; }
+			submit(new WatchSiTask() {
+				public @Override WatchSiTask run() { return null; }
 				public @Override String describe() { return "WORKER_EXHAUSTER"; }
 			});
 		}

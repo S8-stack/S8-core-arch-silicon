@@ -7,7 +7,7 @@ import com.s8.arch.silicon.SiliconEngine;
  * @author pierreconvert
  *
  */
-public interface ClockTask {
+public interface ClockSiTask {
 
 	/**
 	 * 

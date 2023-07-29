@@ -10,17 +10,17 @@ import com.s8.arch.silicon.SiliconEngine;
  * @author pierreconvert
  *
  */
-public class ClockSiUnit {
+public class ClockSiModule {
 
 	private final SiliconEngine engine;
 	
 	private final AtomicBoolean isRunning;
 	
-	private final ConcurrentLinkedQueue<ClockTask> incoming;
+	private final ConcurrentLinkedQueue<ClockSiTask> incoming;
 	
 	private final long tick;
 	
-	public ClockSiUnit(SiliconEngine engine, long tick) {
+	public ClockSiModule(SiliconEngine engine, long tick) {
 		this.engine = engine;
 		isRunning = new AtomicBoolean();
 		incoming = new ConcurrentLinkedQueue<>();
@@ -32,8 +32,8 @@ public class ClockSiUnit {
 	 * 
 	 * @param task
 	 */
-	public void pushTask(ClockTask task) {
-		incoming.add(task);
+	public boolean pushTask(ClockSiTask task) {
+		return incoming.add(task);
 	}
 	
 	
@@ -48,8 +48,8 @@ public class ClockSiUnit {
 				long t = 0;
 				
 
-				ClockTask task;
-				ClockTask[] tasks = new ClockTask[capacity], rollover;
+				ClockSiTask task;
+				ClockSiTask[] tasks = new ClockSiTask[capacity], rollover;
 				
 				while(isRunning.get()) {
 					
@@ -59,7 +59,7 @@ public class ClockSiUnit {
 						
 						// extend if necessary
 						if(position == capacity) {
-							ClockTask[] extended = new ClockTask[2*capacity];
+							ClockSiTask[] extended = new ClockSiTask[2*capacity];
 							for(int i=0; i<capacity; i++) { extended[i] = tasks[i]; }
 							tasks = extended;
 							capacity *= 2;
@@ -71,7 +71,7 @@ public class ClockSiUnit {
 					
 					
 					rPosition = 0;
-					rollover = new ClockTask[capacity];
+					rollover = new ClockSiTask[capacity];
 					for(int i=0; i<position; i++) {
 						if((task = tasks[i]) != null) {
 							boolean isContinued = task.trigger(t, engine);

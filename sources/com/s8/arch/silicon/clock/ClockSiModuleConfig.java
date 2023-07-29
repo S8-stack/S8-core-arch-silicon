@@ -6,7 +6,7 @@ import com.s8.io.xml.annotations.XML_Type;
 
 
 @XML_Type(name = "T3UnitConfig")	
-public class ClockUnitConfig {
+public class ClockSiModuleConfig {
 
 	private long tick = 250;
 	
@@ -15,12 +15,12 @@ public class ClockUnitConfig {
 		this.tick = tick;
 	}
 
-	public ClockUnitConfig() {
+	public ClockSiModuleConfig() {
 		super();
 	}
 
-	public ClockSiUnit build(SiliconEngine engine) {
-		return new ClockSiUnit(engine, tick);
+	public ClockSiModule build(SiliconEngine engine) {
+		return new ClockSiModule(engine, tick);
 	}
 
 
@@ -28,8 +28,8 @@ public class ClockUnitConfig {
 	 * 
 	 * @return
 	 */
-	public static ClockUnitConfig createDefault() {
-		ClockUnitConfig config = new ClockUnitConfig();
+	public static ClockSiModuleConfig createDefault() {
+		ClockSiModuleConfig config = new ClockSiModuleConfig();
 		return config;
 	}
 }
