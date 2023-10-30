@@ -1,11 +1,11 @@
-package com.s8.arch.silicon.async;
+package com.s8.core.arch.silicon.async;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.s8.io.xml.annotations.XML_SetAttribute;
-import com.s8.io.xml.annotations.XML_SetElement;
-import com.s8.io.xml.annotations.XML_Type;
+import com.s8.core.io.xml.annotations.XML_SetAttribute;
+import com.s8.core.io.xml.annotations.XML_SetElement;
+import com.s8.core.io.xml.annotations.XML_Type;
 
 
 @XML_Type(name = "T1UnitConfig")	

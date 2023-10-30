@@ -1,6 +1,6 @@
-package com.s8.arch.silicon.clock;
+package com.s8.core.arch.silicon.clock;
 
-import com.s8.arch.silicon.SiliconEngine;
+import com.s8.core.arch.silicon.SiliconEngine;
 
 /**
  * 

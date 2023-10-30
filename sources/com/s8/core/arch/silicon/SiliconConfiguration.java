@@ -1,10 +1,10 @@
-package com.s8.arch.silicon;
+package com.s8.core.arch.silicon;
 
-import com.s8.arch.silicon.async.AsyncSiModuleConfig;
-import com.s8.arch.silicon.clock.ClockSiModuleConfig;
-import com.s8.arch.silicon.watch.WatchSiModuleConfig;
-import com.s8.io.xml.annotations.XML_SetElement;
-import com.s8.io.xml.annotations.XML_Type;
+import com.s8.core.arch.silicon.async.AsyncSiModuleConfig;
+import com.s8.core.arch.silicon.clock.ClockSiModuleConfig;
+import com.s8.core.arch.silicon.watch.WatchSiModuleConfig;
+import com.s8.core.io.xml.annotations.XML_SetElement;
+import com.s8.core.io.xml.annotations.XML_Type;
 
 @XML_Type(name = "SiliconAppConfiguration", root = true)
 public class SiliconConfiguration {

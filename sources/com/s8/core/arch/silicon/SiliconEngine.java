@@ -1,11 +1,11 @@
-package com.s8.arch.silicon;
+package com.s8.core.arch.silicon;
 
-import com.s8.arch.silicon.async.AsyncSiTask;
-import com.s8.arch.silicon.async.AsyncSiModule;
-import com.s8.arch.silicon.clock.ClockSiTask;
-import com.s8.arch.silicon.clock.ClockSiModule;
-import com.s8.arch.silicon.watch.WatchSiTask;
-import com.s8.arch.silicon.watch.WatchSiModule;
+import com.s8.core.arch.silicon.async.AsyncSiModule;
+import com.s8.core.arch.silicon.async.AsyncSiTask;
+import com.s8.core.arch.silicon.clock.ClockSiModule;
+import com.s8.core.arch.silicon.clock.ClockSiTask;
+import com.s8.core.arch.silicon.watch.WatchSiModule;
+import com.s8.core.arch.silicon.watch.WatchSiTask;
 
 /**
  * 

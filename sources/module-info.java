@@ -5,14 +5,14 @@
  * @author pierreconvert
  *
  */
-module com.s8.arch.silicon {
+module com.s8.core.arch.silicon {
 	
-	exports com.s8.arch.silicon;
-	exports com.s8.arch.silicon.async;
-	exports com.s8.arch.silicon.watch;
-	exports com.s8.arch.silicon.clock;
+	exports com.s8.core.arch.silicon;
+	exports com.s8.core.arch.silicon.async;
+	exports com.s8.core.arch.silicon.watch;
+	exports com.s8.core.arch.silicon.clock;
 	
 	
 	requires transitive com.s8.api;
-	requires transitive com.s8.io.xml;
+	requires transitive com.s8.core.io.xml;
 }

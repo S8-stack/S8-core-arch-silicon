@@ -1,4 +1,4 @@
-package com.s8.arch.silicon.watch;
+package com.s8.core.arch.silicon.watch;
 
 /**
  * 

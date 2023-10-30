@@ -1,4 +1,4 @@
-package com.s8.arch.silicon.async;
+package com.s8.core.arch.silicon.async;
 
 public class AsyncSiModule {
 
