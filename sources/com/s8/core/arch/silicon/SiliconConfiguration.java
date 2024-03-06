@@ -8,6 +8,8 @@ import com.s8.core.io.xml.annotations.XML_Type;
 
 @XML_Type(name = "SiliconAppConfiguration", root = true)
 public class SiliconConfiguration {
+	
+	
 
 	public AsyncSiModuleConfig t1UnitConfig = AsyncSiModuleConfig.createDefault();
 	
@@ -32,6 +34,14 @@ public class SiliconConfiguration {
 	}
 	
 	
+
+	public static SiliconConfiguration createDefault4Cores() {
+		SiliconConfiguration configuration = new SiliconConfiguration();
+		configuration.t1UnitConfig = AsyncSiModuleConfig.createDefault();
+		configuration.t2UnitConfig = WatchSiModuleConfig.createDefault();
+		configuration.t3UnitConfig = ClockSiModuleConfig.createDefault();
+		return configuration;
+	}
 	
 	
 }
